@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body id="ani">
+<article id="art-1">
+    <h3>In how many Rounds you think you can guess the Number?</h3>
+    <form action="" onchange="change()" onsubmit="return false" id="form">
+        <div>
+            <input type="radio" name="chance" id="four" checked>
+            <label for="four">Four</label>
+        </div>
+        <div>
+            <input type="radio" name="chance" id="five">
+            <label for="five">Five</label>
+        </div>
+        <div>
+            <input type="radio" name="chance" id="six">
+            <label for="six">Six</label>
+        </div>
+        <div>
+            <input type="radio" name="chance" id="cust" >
+            <label for="cust">Custom</label>
+        </div>
+        <input type="number" name="" id="cust-nr" placeholder="Give your custom Number">
+    </form>
+</article>
+<article id="art-2">
+    <form action="">
+        <input type="number" name="" id="try">
+        <input type="button" value="Guess" onclick="test()" id="sub">
+    </form>
+    <div id="output">
+
+    </div>
+</article>  
+<audio src="assets/sound/Wrong-answer-sound-effect.mp3" id="wrong"></audio> 
+<audio src="assets/sound/Correct Answer - Sound Effect.mp3" id="correct" ></audio>
+
+<script src="assets/js/main.js"></script>    
+</body>
+</html>
