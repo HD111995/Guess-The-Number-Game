@@ -44,7 +44,7 @@ let counter = 0;
 let random = Number(gen().toFixed(0));
 four = check("four");
 round =4;
-//to show or hide input function and check the
+//function to show or hide input  and check the
 //values of round number in change Action
 function change(){
   
@@ -66,16 +66,17 @@ function change(){
         round = 6;
     }else if(cust == true){
         round = get("cust-nr");
-        if (round == 0 || round > 10 ){
-            alert("pleas give a round number from 1 to 10")
-        }
     }
 }
 //the main function test to compare input values
 function test(){
+//condition to using the same button as
+//Guess and play again also to make a timeless again
+//and again Game 
  if (tryIt == random ||counter == round){
      window.location.reload(true);
  }
+ //add to the counter 1 with every click action
  counter++ ;
 //remove the classes from the element 
 //because of Animation    
@@ -85,8 +86,14 @@ remove("art-1","artani");
 remove("art-1","artani");
 //variable to get the number by the Player   
 tryIt = get("try");
+//condition to show a message when the customround number =0 or > 10
 if (tryIt == 0){
-    window.alert("Please try a random Number from 1 to 100")
+    window.alert("Please try a random Number between 1 and 100")
+    counter = counter - 1;
+}
+//or
+if (round == 0 || round > 10 ){
+    alert("pleas give a round number between 1 and 10")
     counter = counter - 1;
 }
 //define some string variables to print as result
@@ -98,7 +105,8 @@ console.log(random);
 trigger("ani");
 trigger("art-1");
 trigger("art-2");
-//the game function to compare values and return results
+//the game condition to compare values and return results
+//loser
  if (tryIt !== random && tryIt !== 0){
     inject ("form",counter+"/"+round);
     play("wrong");
@@ -111,6 +119,7 @@ trigger("art-2");
     }else if (tryIt < random){
         inject("output",stringHigher);
     }
+    //winner
  }else if (tryIt == random && tryIt !== 0){
      play("correct");
      clas("ani","true");
@@ -119,6 +128,7 @@ trigger("art-2");
      document.getElementById("output").style.color ="greenyellow"
     
  }
+ //loser or winner restart Game when player want to play again
  if (round == counter){
      inject("output","Sorry you Lose within "+counter+" Tries")
      document.getElementById("sub").value = "Try Again";
