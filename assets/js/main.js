@@ -70,6 +70,9 @@ function change(){
 }
 //the main function test to compare input values
 function test(){
+    if (round == 0 || round > 10 ){
+        alert("pleas give a round number between 1 and 10")
+    }else{
 //condition to using the same button as
 //Guess and play again also to make a timeless again
 //and again Game 
@@ -86,16 +89,12 @@ remove("art-1","artani");
 remove("art-1","artani");
 //variable to get the number by the Player   
 tryIt = get("try");
-//condition to show a message when the customround number =0 or > 10
+//condition to show a message when the  player do not input a Number
 if (tryIt == 0){
     window.alert("Please try a random Number between 1 and 100")
     counter = counter - 1;
 }
-//or
-if (round == 0 || round > 10 ){
-    alert("pleas give a round number between 1 and 10")
-    counter = counter - 1;
-}
+
 //define some string variables to print as result
 let stringHigher =counter+"-you need to guess higher than "+tryIt+",try again...<br>";
 let stringLower =counter+"-you need to guess lower than "+tryIt+",try again...<br>";
@@ -133,4 +132,5 @@ trigger("art-2");
      inject("output","Sorry you Lose within "+counter+" Tries")
      document.getElementById("sub").value = "Try Again";
  }
+}
 }
